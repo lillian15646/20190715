@@ -37,12 +37,13 @@ def callback():
     return 'OK'
 
 @handler.add(MessageEvent, message=TextMessage)
+message=StickerSendMesssage( package_id='1',sticker_id='1')
+
 def handle_message(event):
     # 回應使用者輸入的話
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text))
-    message=StickerSendMesssage( package_id='1',sticker_id='1')
+    #line_bot_api.reply_message(
+        #event.reply_token,
+        #TextSendMessage(text=event.message.text))
     line_bot_api.reply_message(event.reply_token,message)
 
 
