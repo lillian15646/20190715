@@ -17,6 +17,8 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
+message=StickerSendMesssage( package_id='1',sticker_id='1')
+line_bot_api.reply_message(event.reply_token,message)
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -49,3 +51,5 @@ if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     # Setting host='0.0.0.0' will make Flask available from the network
     app.run(host='0.0.0.0', port=port)
+
+ 
