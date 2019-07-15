@@ -21,16 +21,16 @@ app = Flask(__name__)
 config = configparser.ConfigParser()
 config.read("config.ini")
 
-# line_bot_api = LineBotApi(config['line_bot']['Channel_Access_Token'])
-# handler = WebhookHandler(config['line_bot']['Channel_Secret'])
-# client_id = config['imgur_api']['Client_ID']
-# client_secret = config['imgur_api']['Client_Secret']
-# album_id = config['imgur_api']['Album_ID']
-# API_Get_Image = config['other_api']['API_Get_Image']
+line_bot_api = LineBotApi(config['line_bot']['Channel_Access_Token'])
+handler = WebhookHandler(config['line_bot']['Channel_Secret'])
+client_id = config['imgur_api']['Client_ID']
+client_secret = config['imgur_api']['Client_Secret']
+album_id = config['imgur_api']['Album_ID']
+API_Get_Image = config['other_api']['API_Get_Image']
 
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
-google_api_key = os.environ['GOOGLE_API_KEY']
+#google_api_key = os.environ['GOOGLE_API_KEY']
 line_reply_api = 'https://api.line.me/v2/bot/message/reply'
 
 
