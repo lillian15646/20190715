@@ -43,7 +43,10 @@ def handle_message(event):
     #line_bot_api.reply_message(
         #event.reply_token,
         #TextSendMessage(text=event.message.text))
-    message=StickerSendMesssage( package_id='1',sticker_id='1')
+    message=StickerSendMessage( 
+        package_id='1',
+        sticker_id='1'
+    )
     line_bot_api.reply_message(event.reply_token,message)
 
 
